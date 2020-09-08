@@ -1,0 +1,12 @@
+use charnames qw(katakana);
+use Encode;
+my $hello = "\272\243\306\374\244\317\241\242\300\244\263\246";
+my $hello_uni = decode("euc-jp", $hello);
+print $hello_uni;
+print "\n";
+print "\N{sa}\N{i}\N{mo}\N{n}\n";
+open OUT, ">$hello_uni" or die $!;
+print OUT "\N{a}\N{i}\N{ku}\N{ke}\n";
+print OUT "\N{sa}\N{sh}\N{su\N{se}\n";
+print OUT "\N{ma}\N{shi}\N{mo}\N{n}\n";
+print OUT "\N{sa}\N{i}\N{mo}\N{n}\n";
